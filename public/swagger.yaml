@@ -1,0 +1,76 @@
+basePath: ""
+definitions:
+    Account:
+        description: ""
+        properties:
+            id:
+                type: number
+                format: double
+                description: ""
+            title:
+                type: string
+                description: ""
+        type: object
+        required:
+            - id
+            - title
+    Segment:
+        description: ""
+        properties:
+            segment:
+                type: string
+                description: ""
+            riskCategory:
+                type: string
+                description: ""
+        type: object
+info:
+    license:
+        name: ISC
+    title: nodebase
+    version: 0.0.0
+paths:
+    /accounts:
+        get:
+            operationId: ApiAccountList
+            produces:
+                - application/json
+            responses:
+                '200':
+                    description: Ok
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/Account'
+                '500':
+                    description: ""
+            description: ""
+            parameters: []
+    /segment:
+        get:
+            operationId: ApiRateGetSegment
+            produces:
+                - application/json
+            responses:
+                '200':
+                    description: Ok
+                    schema:
+                        $ref: '#/definitions/Segment'
+                '500':
+                    description: ""
+            description: ""
+            parameters:
+                -
+                    description: ""
+                    in: query
+                    name: rut
+                    required: true
+                    type: string
+                -
+                    description: ""
+                    in: query
+                    name: digitoVerificador
+                    required: true
+                    type: string
+swagger: '2.0'
+securityDefinitions: {}

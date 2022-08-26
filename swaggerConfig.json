@@ -1,0 +1,9 @@
+{
+    "swagger": {
+        "outputDirectory": "./public",
+        "yaml": "true",
+        "outputFormat": "Swagger_2",
+        "basePath": "",
+        "entryFile": "./src/adapters/api/*.ts"
+    }
+}
