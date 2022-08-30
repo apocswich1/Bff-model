@@ -5,7 +5,7 @@ import ICustomerRiskRepository from "src/domain/ports/segment/ICustomerRiskRepos
 
 export default class CustomerRiskRepository implements ICustomerRiskRepository {
     async getCustomerRisk(rut: string, digitoVerificador:string): Promise<CustomerRisk> {
-        const { data: responseInfo } = await axios.get(`http://10.191.104.168:3000/getcustomerrisksegmentbyid?clientId=${rut}${digitoVerificador}`);
+        const { data: responseInfo } = await axios.get(`http://10.191.104.168:3008/getcustomerrisksegmentbyid?clientId=${rut}${digitoVerificador}`);
         return responseInfo;
     }
 

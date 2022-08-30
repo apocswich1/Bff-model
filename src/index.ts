@@ -2,7 +2,7 @@ import express, { Application, NextFunction, Request, Response } from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 
-import { accountRoutes, segmentRoutes } from './routes';
+import { accountRoutes, rateRoutes } from './routes';
 // import uuid from 'uuid';
 
 import {
@@ -42,8 +42,8 @@ app.use(
   }),
 );
 
-app.use('/account', accountRoutes);
-app.use('/rate', segmentRoutes);
+
+app.use('/rate', rateRoutes);
 app.use((req: Request, res: Response, next: NextFunction) => {
   const err = new Error('Not Found');
   // err.status = 404;
